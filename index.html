@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("heart.gif");
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 100%;
+            max-width: 350px;
+            padding: 30px;
+            background-color: transparent;
+            border: 1px solid #ff0303;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            animation: h2Glow 2s infinite alternate;
+        }
+        @keyframes h2Glow {
+            0% {
+                text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ff03ff, 0 0 20px #ff03ff;
+                transform: scale(1);
+            }
+            100% {
+                text-shadow: 0 0 10px #ffffff, 0 0 20px #ff03ff, 0 0 30px #ff03ff, 0 0 40px #ff03ff;
+                transform: scale(1.05);
+            }
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: white;
+            box-shadow: 0 0 5px rgba(255, 3, 3, 0.5);
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: darkviolet;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: multiGlow 1.5s infinite alternate;
+        }
+        input[type="submit"]:hover {
+            background-color: black;
+       
+    </style>
+</head>
+<body>
+    <form action="Home.html" method="post">
+       <h2>Login</h2>
+       <label for="username">Username</label>
+       <input type="text" id="username" name="love" placeholder="Username">
+       <label for="password">Password</label>
+       <input type="password" id="password" name="you" placeholder="Enter password">
+       <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+<script>
+        // Function to validate login credentials
+        function validateLogin() {
+            // Get username and password values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Predefined username and password
+            var correctUsername = "love";  // Change to your desired username
+            var correctPassword = "you";  // Change to your desired password
+
+            // Check if the username and password match the correct credentials
+            if (username === correctUsername && password === correctPassword) {
+                // Redirect to home page upon successful login
+                window.location.href = "home.html"; // Change "home.html" to your actual homepage URL
+                return false; // Prevent form submission (no page reload)
+            } else {
+                // Show error message if login fails
+                document.getElementById('errorMessage').innerText = "Invalid username or password. Please try again.";
+                return false; // Prevent form submission (no page reload)
+            }
+        }
+    </script>
+
+</body>
+</html>

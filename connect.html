@@ -1,0 +1,26 @@
+   <script>
+        // Function to validate login credentials
+        function validateLogin() {
+            // Get username and password values
+            var username = document.getElementById('Username').value;
+            var password = document.getElementById('Enter password').value;
+
+            // Predefined username and password
+            var correctUsername = "love";  // Change to your desired username
+            var correctPassword = "you";  // Change to your desired password
+
+            // Check if the username and password match the correct credentials
+            if (username === correctUsername && password === correctPassword) {
+                // Redirect to home page upon successful login
+                window.location.href = "home.html"; // Change "home.html" to your actual homepage URL
+                return false; // Prevent form submission (no page reload)
+            } else {
+                // Show error message if login fails
+                document.getElementById('errorMessage').innerText = "Invalid username or password. Please try again.";
+                return false; // Prevent form submission (no page reload)
+            }
+        }
+    </script>
+
+</body>
+</html>
